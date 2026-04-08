@@ -47,7 +47,6 @@ with div:
         st.session_state.n = st.session_state.num1
         st.session_state.operation = '/'
         st.session_state.num1 = ''
-#n2 = st.session_state.num1
 
 clear, cal = st.columns(2)
 with clear:
@@ -74,7 +73,6 @@ with cal:
             else:
                 st.session_state.clr = "="
                 if st.session_state.operation == '+':
-                    #st.write(st.session_state.n,st.session_state.operation,st.session_state.num1)
                     st.session_state.result = n1 + n2
                 elif st.session_state.operation == '-':
                     st.session_state.result = n1 - n2

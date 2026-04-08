@@ -10,6 +10,8 @@ if 'n' not in st.session_state:
     st.session_state.n = ""
 if 'result' not in st.session_state:
     st.session_state.result = ""
+if 'clr' not in st.session_state:
+    st.session_state.clr = ""
 
 rows = 3
 cols = 3
@@ -54,6 +56,7 @@ with clear:
         st.session_state.operation = ""
         st.session_state.n = ""
         st.session_state.result = ""
+        st.session_state.clr = ""
 
 
 with cal:
@@ -69,6 +72,7 @@ with cal:
             except ValueError:
                 st.write("Error: Invalid number input.")
             else:
+                st.session_state.clr = "="
                 if st.session_state.operation == '+':
                     #st.write(st.session_state.n,st.session_state.operation,st.session_state.num1)
                     st.session_state.result = n1 + n2
@@ -83,4 +87,5 @@ with cal:
                         st.session_state.result = n1 / n2
                         
 
-st.write( st.session_state.n,st.session_state.operation,st.session_state.num1,'=', st.session_state.result)
+st.write(st.session_state.n,st.session_state.operation,st.session_state.num1,st.session_state.clr, st.session_state.result)
+
